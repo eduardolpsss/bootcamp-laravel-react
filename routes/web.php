@@ -26,6 +26,7 @@ Route::get('/', function () {
     ]);
 });
 
+// Creating posts route, only index, store, show, update, destroy utilizing middleware auth to protect the routes
 Route::resource('posts', PostController::class)
     ->only(['index', 'store', 'show', 'update', 'destroy'])
     ->middleware(['auth']);
